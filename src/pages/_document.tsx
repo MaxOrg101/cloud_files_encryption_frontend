@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <Script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" />
+        <Script src="https://code.iconify.design/3/3.1.0/iconify.min.js" />
       </Head>
       <body>
         <Main />

@@ -3,33 +3,16 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 
 type Props = {
-  fileName: string;
-  path: string;
+  content: string;
   onClose: () => void;
 };
-const Model = (prop: Props) => {
-  const [content, setContent] = useState("");
+const FileViewModel = (prop: Props) => {
   return (
     <>
       <div className="fixed h-screen w-screen bg-black/50"></div>
       <div className="h-full w-full fixed overflow-scroll pb-36">
         <div className="mx-auto w-4/5 my-5 bg-gray-900 px-8 py-5 rounded-lg mt-28">
-          <input
-            placeholder="content"
-            className="mr-4 p-2"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />
-          <button
-            className="text-white bg-gray-700 px-2 py-2.5 ml-10"
-            onClick={() => {
-              console.log("uploadin");
-
-              upload_txt_file(prop.path, content, prop.fileName);
-            }}
-          >
-            Upload
-          </button>
+          <p>{prop.content}</p>
           <button
             type="button"
             onClick={prop.onClose}
@@ -43,6 +26,6 @@ const Model = (prop: Props) => {
   );
 };
 
-export default dynamic(() => Promise.resolve(Model), {
+export default dynamic(() => Promise.resolve(FileViewModel), {
   ssr: false,
 });
