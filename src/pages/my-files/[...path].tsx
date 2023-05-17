@@ -3,7 +3,7 @@ import { FileRes, GetFilesRes, get_folders } from "@/api/get-folders";
 import { decrypt, encrypt } from "@/encryption/tools";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Model from "./components/Model";
+import Model from "./components/UploadModel";
 import Script from "next/script";
 import FileViewModel from "./components/FileViewModel";
 import axios from "axios";

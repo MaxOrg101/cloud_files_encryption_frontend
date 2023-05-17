@@ -4,7 +4,7 @@ import { upload_txt_file } from "@/api/upload-file";
 import { decrypt, encrypt, LOCAL_KEY } from "@/encryption/tools";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Model from "./components/Model";
+import UploadModel from "./components/UploadModel";
 import Script from "next/script";
 import { axios_instance } from "@/api/axios";
 import FileViewModel from "./components/FileViewModel";
@@ -37,11 +37,11 @@ const MyFiles = () => {
         ></FileViewModel>
       )}
       {model_active && (
-        <Model
+        <UploadModel
           fileName={name_input}
           path={"/"}
           onClose={() => set_modal_active(false)}
-        ></Model>
+        ></UploadModel>
       )}
       <Script src="https://code.iconify.design/3/3.1.0/iconify.min.js" />
       <div>
